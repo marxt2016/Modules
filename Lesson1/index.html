@@ -5,11 +5,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script type="module" src="./js/main.js"></script>
+    <title>Калькулято дат</title>
 </head>
 
 <body>
+    <h2>Калькулято дат</h2>
+    <form id="calcDate">
+        <label for="dateFrom">
+            Первая дата:
+            <input type="date" name="dateFrom">
+        </label>
+        <label for="dateTo">
+            Вторая дата:
+            <input type="date" name="dateTo">
+        </label>
+        <button type="submit">Рассчитать промежуток</button>
+    </form>
 
+    <p id="output"></p>
 </body>
 
 </html>
