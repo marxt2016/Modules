@@ -3,6 +3,7 @@ import calcDatesDiff from './calcDatesDiff.js';
 import { openTab } from './switchTabs.js';
 import { start, stop, reset } from './timer.js';
 
+
 const form = document.getElementById('calcDate');
 
 form.onsubmit = function (event) {
