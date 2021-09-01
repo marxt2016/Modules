@@ -5,6 +5,11 @@ export function printError(errorText) {
 
 }
 
+export function deleteError() {
+    paragraph.innerHTML = "";
+
+}
+
 const printResult = ({ years, months, days }) => {
     paragraph.innerHTML = `
         год: ${years}
