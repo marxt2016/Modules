@@ -1,10 +1,12 @@
 import { Howl } from 'howler'
 import { printError, deleteError } from './output.js';
+import soundFile from '../audio/sound.mp3'
 let userInput = document.getElementById('input');
 let seconds = document.getElementById('second');
 let minutes = document.getElementById('minute');
 let totalSeconds = 0;
 let countdown = null;
+
 
 const sound = new Howl({
     src: ['./audio/sound.mp3'],
@@ -27,6 +29,7 @@ export function start() {
 
 export function stop() {
     clearInterval(countdown);
+    sound.stop();
 };
 
 export function reset() {

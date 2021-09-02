@@ -1,9 +1,9 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPligin, CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
 
 module.exports = {
-    context: '',
     mode: 'development',
     entry: {
         main: './js/main.js'
@@ -20,11 +20,29 @@ module.exports = {
         new HTMLWebpackPlugin({
             template: 'index.html'
         }),
-        new CleanWebpackPlugin()
-    ],
-    module: {
-        rules: [
+        new CleanWebpackPlugin(),
 
+    ],
+    optimization: {
+        splitChunks: {
+            chunks: 'all'
+        }
+    },
+    module: {
+
+        rules: [
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+            },
+            {
+                test: /\.mp3$/,
+                loader: 'file-loader',
+                options: {
+                    name: '[path][name].[ext]',
+                }
+            }
         ]
     }
+
 }
