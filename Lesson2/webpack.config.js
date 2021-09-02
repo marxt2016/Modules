@@ -1,6 +1,8 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 
 module.exports = {
@@ -21,7 +23,14 @@ module.exports = {
             template: 'index.html'
         }),
         new CleanWebpackPlugin(),
+        new MiniCssExtractPlugin({
+            filename: '[name].[contenthash].css'
+        }),
 
+        new BundleAnalyzerPlugin({
+            // Port that will be used by in `server` mode to start HTTP server. 
+            analyzerPort: 4000,
+        })
     ],
     optimization: {
         splitChunks: {
@@ -32,7 +41,7 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/,
-                use: ['style-loader', 'css-loader']
+                use: [MiniCssExtractPlugin.loader, 'css-loader']
             },
             {
                 test: /\.mp3$/,
@@ -42,6 +51,6 @@ module.exports = {
                 }
             }
         ]
-    }
+    },
 
 }
