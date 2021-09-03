@@ -41,8 +41,18 @@ module.exports = {
                 test: /\.mp3$/,
                 loader: 'file-loader',
                 options: {
-                    name: '[path][name].[ext]',
+                    name: 'audio/[name].[ext]',
                 }
+            },
+            {
+                test: /\.mp4$/,
+                use: [
+                    {
+                        loader: "file-loader?name=video/[name].[ext]",
+
+                    }
+                ]
+
             },
             {
                 test: /\.(jpe?g|png|gif|svg)$/i,
