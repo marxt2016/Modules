@@ -1,0 +1,43 @@
+* {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.mainheader {
+  color: purple;
+  text-align: center;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.card {
+  padding: 10px;
+  margin: 20px;
+  border: solid 1px indigo;
+  -webkit-box-shadow: 5px 3px 3px indigo;
+          box-shadow: 5px 3px 3px indigo;
+}
+
+.cardtitle {
+  text-align: center;
+  font-size: large;
+  font-weight: 700;
+  color: indigo;
+}
+
+.cardcontent {
+  padding: 10px;
+  width: 400px;
+  height: 300px;
+}
+/*# sourceMappingURL=styles.css.map */
